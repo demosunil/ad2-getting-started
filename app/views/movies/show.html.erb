@@ -12,11 +12,10 @@
       </div>
 
       <div>
-        <a href="/movies/<%= @the_movie.id %>" data-method="delete">
-          Delete movie
+<a href="/movies/<%= @the_movie.id %>" data-method="delete">
+          Delete Movie
         </a>
       </div>
-
     </div>
 
     <dl>
@@ -60,6 +59,7 @@
 
 <hr>
 
+
 <div>
   <div>
     <h2>
@@ -67,8 +67,8 @@
     </h2>
 
     <form action="/movies/<%= @the_movie.id %>"  method="post" >
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <input type="hidden" name="_method" value="patch">
+    <input type ="hidden"  name= "authenticity_token" value ="<%=form_authenticity_token%>">
+    <input type="hidden" name ="_method" value ="patch">
       <div>
         <label for="title_box">
           Title
@@ -89,7 +89,7 @@
         <input type="checkbox" id="released_box" name="query_released" value="1" <%= "checked" if @the_movie.released %>>
 
         <label for="released_box">
-          Released
+            Released
         </label>
       </div>
 

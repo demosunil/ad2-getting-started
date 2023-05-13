@@ -66,12 +66,19 @@ class MoviesController < ApplicationController
   end
 
   def destroy
-    the_id = params.fetch("Path_id")
-    the_movie = Movie.where({ :id => the_id }).first
+    #the_id = params.fetch("path_id")
+    #the_movie = Movie.where({ :id => the_id }).first
 
-    the_movie.destroy
+    #the_movie.destroy
 
-    redirect_to("/movies", { :notice => "Movie deleted successfully."} )
+    #redirect_to("/movies", { :notice => "Movie deleted successfully."} )
+   #end
+      the_movie = Movie.find(params[:path_id])
+      the_movie.destroy
+    
+      redirect_to "/movies", notice: "Movie deleted successfully."
+    
+    
   end
   
 end
